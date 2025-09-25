@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="unit_obstacle">
+    <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+
+
+    <link name="unit_obstacle">
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>7.2397393e-01</ixx>
+          <ixy>4.686399e-10</ixy>
+          <ixz>-1.09525703e-08</ixz>
+          <iyy>7.2397393e-01</iyy>
+          <iyz>2.8582649e-09</iyz>
+          <izz>6.53050163e-01</izz>
+        </inertia>
+        <mass>8.2573504e-01</mass>
+      </inertial>
+
+      <collision name="obstacle collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.5</length>
+          </cylinder>
+          <!-- <sphere>
+            <radius>0.25</radius>
+          </sphere>  -->
+        </geometry>
+      </collision>
+
+      <!-- <visual name="base_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>1.0</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual> -->
+
+    </link>
+  </model>
+</sdf>
