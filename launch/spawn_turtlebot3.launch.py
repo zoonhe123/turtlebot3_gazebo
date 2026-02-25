@@ -44,6 +44,18 @@ def generate_launch_description():
     declare_y_position_cmd = DeclareLaunchArgument(
         'y_pose', default_value='0.0',
         description='Specify namespace of the robot')
+    
+    
+    
+    
+    # 
+    # 1.5708 radian = 90 degree
+    yaw_pose = LaunchConfiguration('yaw_pose', default='1.5708') # 1.5708
+    
+    # [수정 2] yaw_pose 인자 선언 추가
+    declare_yaw_position_cmd = DeclareLaunchArgument(
+        'yaw_pose', default_value='1.5708',
+        description='Specify yaw of the robot')
 
     start_gazebo_ros_spawner_cmd = Node(
         package='gazebo_ros',
@@ -53,7 +65,8 @@ def generate_launch_description():
             '-file', urdf_path,
             '-x', x_pose,
             '-y', y_pose,
-            '-z', '0.01'
+            '-z', '0.01',
+            '-Y', yaw_pose # [수정 3] -Y 옵션 추가 (대문자 Y가 Yaw입니다)
         ],
         output='screen',
     )
@@ -63,6 +76,7 @@ def generate_launch_description():
     # Declare the launch options
     ld.add_action(declare_x_position_cmd)
     ld.add_action(declare_y_position_cmd)
+    ld.add_action(declare_yaw_position_cmd) # [수정 4] 액션 추가
 
     # Add any conditioned actions
     ld.add_action(start_gazebo_ros_spawner_cmd)

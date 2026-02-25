@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="unit_obstacle">
+  <model name="human">
     <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
 
 
-    <link name="unit_obstacle">
+    <link name="human">
 
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -19,12 +19,15 @@
         <mass>8.2573504e-01</mass>
       </inertial>
 
+      <gravity>0</gravity>
+      <kinematic>1</kinematic>
+
       <collision name="obstacle collision">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0.75 0 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.25</radius>
-            <length>0.5</length>
+            <radius>0.3</radius>
+            <length>1.5</length>
           </cylinder>
           <!-- <sphere>
             <radius>0.25</radius>
@@ -33,11 +36,11 @@
       </collision>
 
       <!-- <visual name="base_visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0.75 0 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.25</radius>
-            <length>1.0</length>
+            <radius>0.3</radius>
+            <length>1.5</length>
           </cylinder>
         </geometry>
         <material>

@@ -23,19 +23,27 @@
       <collision name="base_collision">
         <pose>-0.032 0 0.070 0 0 0</pose>
         <geometry>
-          <box>
+          <!-- <box>
             <size>0.140 0.140 0.140</size>
-          </box>
+          </box> -->
+          <cylinder>
+            <radius>0.5</radius>
+            <length>0.1</length>
+          </cylinder>
         </geometry>
       </collision>
 
       <visual name="base_visual">
-        <pose>-0.032 0 0 0 0 0</pose>
+        <pose>-0.032 0 0.0 0 0 0</pose>
         <geometry>
-          <mesh>
+          <!-- <mesh>
             <uri>model://turtlebot3_common/meshes/bases/burger_base.stl</uri>
             <scale>0.001 0.001 0.001</scale>
-          </mesh>
+          </mesh> -->
+          <cylinder>
+            <radius>0.5</radius>
+            <length>0.2</length>
+          </cylinder>
         </geometry>
         <material>
           <ambient>0.3 0.3 0.3 1.0</ambient>
@@ -145,7 +153,7 @@
         <ray>
           <scan>
             <horizontal>
-              <samples>720</samples>
+              <samples>720</samples> <!-- 720-->
               <resolution>1.000000</resolution>
               <min_angle>0.000000</min_angle>
               <max_angle>6.280000</max_angle>
@@ -153,7 +161,7 @@
           </scan>
           <range>
             <min>0.120000</min>
-            <max>8.0</max>
+            <max>8.0</max> <!--8.0-->
             <resolution>0.015000</resolution>
           </range>
           <noise>
